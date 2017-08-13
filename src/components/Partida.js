@@ -5,8 +5,8 @@ export default class Partida extends React.Component{
     render(){
         return(
             <div>
-                <h1>Maracanã</h1>
-                <h2>25/01/2017</h2>
+                <h1>{this.props.partida.estadio}</h1>
+                <h2>{this.props.partida.data} - {this.props.partida.hora}</h2>
             </div>            
         );
     }
