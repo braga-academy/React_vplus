@@ -25,20 +25,23 @@ export default class Placar extends React.Component{
     }
 
     render(){
+        const { partida, casa, visitante } = this.props;
+        const estilo = { float: "left", "marginRight": "15px" };
+
         return(
             <div>
-                <div style={{ float: "left", "marginRight": "15px" }}>
+                <div style={estilo}>
                     <h3>Casa</h3>
-                    <Time nome={this.props.casa.nome}
+                    <Time nome={casa.nome}
                           gols={this.state.gols_casa}
                           marcarGol={this.marcarGolCasa.bind(this)}/>
                 </div>
-                <div style={{ float: "left", "marginRight": "15px" }}>
-                    <Partida partida={this.props.partida} />
+                <div style={estilo}>
+                    <Partida {...partida} />
                 </div>
-                <div style={{ float: "left", "marginRight": "15px" }}>
+                <div style={estilo}>
                     <h3>Visitante</h3>
-                    <Time nome={this.props.visitante.nome}
+                    <Time nome={visitante.nome}
                           gols={this.state.gols_visitante}
                           marcarGol={this.marcarGolVisitante.bind(this) }/>
                 </div>
