@@ -38,6 +38,7 @@ export default class Placar extends React.Component{
                 </div>
                 <div style={estilo}>
                     <Partida {...partida} />
+                    <p>{ this.props.clima }</p>
                 </div>
                 <div style={estilo}>
                     <h3>Visitante</h3>
@@ -49,4 +50,13 @@ export default class Placar extends React.Component{
         );
     }
 
+}
+
+Placar.propTypes = {
+    clima: React.PropTypes.string,
+    tempo: React.PropTypes.number.isRequired,
+}
+
+Placar.defaultProps = {
+    clima: 'Ensolarado'
 }

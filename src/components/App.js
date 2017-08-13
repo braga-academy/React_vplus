@@ -18,6 +18,6 @@ const dados = {
 
 export default class App extends React.Component{
     render(){
-        return <Placar {...dados} />
+        return <Placar {...dados} tempo={92}/>
     }
 }
