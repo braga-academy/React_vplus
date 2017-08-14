@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { Link } from 'react-router-dom';
+
 export default class App extends React.Component{
     constructor(){
         super();
@@ -7,7 +9,21 @@ export default class App extends React.Component{
 
     render(){
         return(
-            <h1>Mostrando APP</h1>
+            <div>
+                <nav className="nav has-shadow">
+                    <div className="nav-left">
+                        <Link to="/" className="nav-item is-tab" activeClassName="is-active">Home</Link>
+                        <Link to="/cursos" className="nav-item is-tab" activeClassName="is-active">Cursos</Link>
+                        <Link to="/sobre" className="nav-item is-tab" activeClassName="is-active">Sobre</Link>
+                    </div>
+                </nav>
+
+                <section className="section">
+                    <div className="container">
+                        <h1 className="title">{ this.props.children }</h1>
+                    </div>
+                </section>
+            </div>
         );
     }
 
